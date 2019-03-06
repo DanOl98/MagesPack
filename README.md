@@ -1,5 +1,5 @@
-# SGOMPK
-Steins Gate 0 MPK UnPack &amp; RePack. Fixed mpk creation with correct mpk structure.
+# SG0MPK
+Steins Gate 0 MPK UnPack &amp; RePack. Fixed mpk creation with correct mpk structure. 
 # Structure
 
 ## Header
