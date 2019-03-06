@@ -26,13 +26,12 @@ namespace SGOMPK
                 binaryWriter.Write(VersionMinor);
                 binaryWriter.Write(VersionMajor);
                 binaryWriter.Write((long)entries.Count);
-                int num = FirstEntryOffset - (int)output.Position - 4;
+                int num = FirstEntryOffset - (int)output.Position;
                 binaryWriter.Write(new byte[num]);
-                binaryWriter.Write((long)(compress?1:0));
                 int num2 = FileHeaderLength * entries.Count;
                 if (num2 % 2048L != 0L || num2 < 2048L)
                 {
-                    int n = (int)((num2 / 2048L + 1L) * 2048L) - (num2 + 72);
+                    int n = (int)((num2 / 2048L + 1L) * 2048L) - (num2 + FirstEntryOffset);
                     binaryWriter.Write(new byte[n]);
                 }
                 binaryWriter.Write(new byte[num2]);
@@ -58,7 +57,8 @@ namespace SGOMPK
                         }
                     }
                     long position2 = output.Position;
-                    output.Position = (long)(68 + i * 256);
+                    output.Position = (long)(FirstEntryOffset + i * 256);
+                    binaryWriter.Write((int)(compress ? 1 : 0));
                     binaryWriter.Write(entries[i].Id);
                     binaryWriter.Write(position);
                     binaryWriter.Write(fileInfo.Length);
@@ -99,7 +99,6 @@ namespace SGOMPK
                     {
                         binaryWriter.Write(new byte[224-ls]);
                     }
-                    binaryWriter.Write((long)(long)(compress ? 1 : 0));
                     output.Position = position2;
                 }
             }
@@ -109,7 +108,7 @@ namespace SGOMPK
         private const short VersionMajor = 2;
         private const short VersionMinor = 0;
         private const int FileHeaderLength = 256;
-        private const int FirstEntryOffset = 68;
+        private const int FirstEntryOffset = 64;
         public void ReadArchive(Stream input)
         {
             using (BinaryReader binaryreader = new BinaryReader(input))
