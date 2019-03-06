@@ -30,6 +30,11 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.header = new System.Windows.Forms.CheckBox();
+            this.compressbox = new System.Windows.Forms.CheckBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.label4 = new System.Windows.Forms.Label();
             this.lbTextRe = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -51,13 +56,13 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.txtDirectoryDataUn = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtmpkcopy = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.tabPage2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -68,11 +73,16 @@
             this.tabControl1.Location = new System.Drawing.Point(20, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(432, 197);
+            this.tabControl1.Size = new System.Drawing.Size(432, 308);
             this.tabControl1.TabIndex = 12;
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.button3);
+            this.tabPage1.Controls.Add(this.txtmpkcopy);
+            this.tabPage1.Controls.Add(this.header);
+            this.tabPage1.Controls.Add(this.compressbox);
             this.tabPage1.Controls.Add(this.groupBox1);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.lbTextRe);
@@ -87,25 +97,81 @@
             this.tabPage1.Controls.Add(this.txtDirectoryDataRe);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(424, 171);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Size = new System.Drawing.Size(424, 282);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "RePack";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // header
+            // 
+            this.header.AutoSize = true;
+            this.header.Location = new System.Drawing.Point(91, 113);
+            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.header.Name = "header";
+            this.header.Size = new System.Drawing.Size(88, 17);
+            this.header.TabIndex = 23;
+            this.header.Text = "Copy Header";
+            this.header.UseVisualStyleBackColor = true;
+            this.header.CheckedChanged += new System.EventHandler(this.header_CheckedChanged);
+            // 
+            // compressbox
+            // 
+            this.compressbox.AutoSize = true;
+            this.compressbox.Location = new System.Drawing.Point(180, 113);
+            this.compressbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.compressbox.Name = "compressbox";
+            this.compressbox.Size = new System.Drawing.Size(125, 17);
+            this.compressbox.TabIndex = 23;
+            this.compressbox.Text = "Files are compressed";
+            this.compressbox.UseVisualStyleBackColor = true;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radioButton2);
+            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Location = new System.Drawing.Point(91, 181);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(243, 53);
+            this.groupBox1.TabIndex = 22;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Sort By";
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(146, 19);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(91, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.Text = "Date Modified";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Checked = true;
+            this.radioButton1.Location = new System.Drawing.Point(8, 19);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(53, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Name";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(49, 144);
+            this.label4.Location = new System.Drawing.Point(41, 258);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(46, 13);
+            this.label4.Size = new System.Drawing.Size(43, 13);
             this.label4.TabIndex = 21;
-            this.label4.Text = "Statuts :";
+            this.label4.Text = "Status :";
             // 
             // lbTextRe
             // 
             this.lbTextRe.AutoSize = true;
-            this.lbTextRe.Location = new System.Drawing.Point(101, 144);
+            this.lbTextRe.Location = new System.Drawing.Point(88, 258);
             this.lbTextRe.Name = "lbTextRe";
             this.lbTextRe.Size = new System.Drawing.Size(0, 13);
             this.lbTextRe.TabIndex = 20;
@@ -121,7 +187,7 @@
             // 
             // txtNameRe
             // 
-            this.txtNameRe.Location = new System.Drawing.Point(92, 62);
+            this.txtNameRe.Location = new System.Drawing.Point(93, 62);
             this.txtNameRe.Name = "txtNameRe";
             this.txtNameRe.Size = new System.Drawing.Size(242, 20);
             this.txtNameRe.TabIndex = 18;
@@ -129,9 +195,9 @@
             // 
             // btnRePack
             // 
-            this.btnRePack.Location = new System.Drawing.Point(341, 62);
+            this.btnRePack.Location = new System.Drawing.Point(157, 136);
             this.btnRePack.Name = "btnRePack";
-            this.btnRePack.Size = new System.Drawing.Size(75, 23);
+            this.btnRePack.Size = new System.Drawing.Size(104, 39);
             this.btnRePack.TabIndex = 17;
             this.btnRePack.Text = "RePack";
             this.btnRePack.UseVisualStyleBackColor = true;
@@ -139,7 +205,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(341, 33);
+            this.button2.Location = new System.Drawing.Point(341, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 16;
@@ -174,7 +240,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(341, 7);
+            this.button1.Location = new System.Drawing.Point(341, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -202,8 +268,8 @@
             this.tabPage2.Controls.Add(this.txtDirectoryDataUn);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(436, 122);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage2.Size = new System.Drawing.Size(424, 214);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "UnPack";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -237,7 +303,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(343, 32);
+            this.button4.Location = new System.Drawing.Point(343, 34);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 27;
@@ -272,7 +338,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(343, 6);
+            this.button5.Location = new System.Drawing.Point(343, 7);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 23;
@@ -287,44 +353,39 @@
             this.txtDirectoryDataUn.Size = new System.Drawing.Size(242, 20);
             this.txtDirectoryDataUn.TabIndex = 22;
             // 
-            // groupBox1
+            // label6
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(92, 88);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(243, 53);
-            this.groupBox1.TabIndex = 22;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sort By";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "MPK File :";
             // 
-            // radioButton1
+            // button3
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(8, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(53, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Name";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(341, 87);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Open";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // radioButton2
+            // txtmpkcopy
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(146, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(91, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Date Modified";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.txtmpkcopy.Enabled = false;
+            this.txtmpkcopy.Location = new System.Drawing.Point(93, 88);
+            this.txtmpkcopy.Name = "txtmpkcopy";
+            this.txtmpkcopy.Size = new System.Drawing.Size(242, 20);
+            this.txtmpkcopy.TabIndex = 25;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 277);
+            this.ClientSize = new System.Drawing.Size(472, 388);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -334,10 +395,10 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.tabPage2.ResumeLayout(false);
-            this.tabPage2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -370,6 +431,11 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.CheckBox compressbox;
+        private System.Windows.Forms.CheckBox header;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.TextBox txtmpkcopy;
     }
 }
 

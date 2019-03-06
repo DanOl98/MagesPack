@@ -12,6 +12,7 @@ namespace SGOMPK
 {
     public partial class Form1 : MetroForm
     {
+        private MpkWriter writer;
         public Form1()
         {
             InitializeComponent();
@@ -19,7 +20,7 @@ namespace SGOMPK
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            writer = new MpkWriter();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -124,7 +125,11 @@ namespace SGOMPK
                 {
                     FileInfo = (a.Fileinfo = new Func<FileInfo, int, MpkFileEntry>(a.install.PackFileInfo));
                 }
-                MpkWriter.WriteArchive(ListFileData2.Select(FileInfo).ToList<MpkFileEntry>(), fileStream);
+
+                bool copy = header.Checked;
+                bool compress = compressbox.Checked;
+                IList<MpkFileEntry> entries = ListFileData2.Select(FileInfo).ToList<MpkFileEntry>();
+                writer.WriteArchive(entries, fileStream, compress, copy, Path.Combine(txtmpkcopy.Text));
             }
         }
 
@@ -161,6 +166,23 @@ namespace SGOMPK
             public static readonly a install = new a();
             public static Func<FileInfo, string> FileinfoName;
             public static Func<FileInfo, int, MpkFileEntry> Fileinfo;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            using (CommonOpenFileDialog open = new CommonOpenFileDialog())
+            {
+                if (open.ShowDialog() == CommonFileDialogResult.Ok)
+                {
+                    txtmpkcopy.Text = open.FileName;
+                }
+            }
+        }
+
+        private void header_CheckedChanged(object sender, EventArgs e)
+        {
+            button3.Enabled = header.Checked;
+            txtmpkcopy.Enabled = header.Checked;
         }
     }
 }
