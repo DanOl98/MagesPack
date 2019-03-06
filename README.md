@@ -17,7 +17,7 @@ Two | 2 bytes | 0x2
 Name | Size |
 --- | --- 
 File count | 8 bytes
-Null Bytes | 7 * 7 bytes
+Null Bytes | 6 * 8 bytes
 
 ## File information
 ##### Total 256 bytes(each)
