@@ -75,7 +75,7 @@
             this.tabControl1.Location = new System.Drawing.Point(20, 60);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(432, 308);
+            this.tabControl1.Size = new System.Drawing.Size(505, 308);
             this.tabControl1.TabIndex = 12;
             // 
             // tabPage1
@@ -100,7 +100,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(424, 282);
+            this.tabPage1.Size = new System.Drawing.Size(497, 282);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "RePack";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -108,16 +108,16 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 90);
+            this.label6.Location = new System.Drawing.Point(41, 92);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.Size = new System.Drawing.Size(90, 13);
             this.label6.TabIndex = 27;
-            this.label6.Text = "MPK File :";
+            this.label6.Text = "MPK File to copy:";
             // 
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(341, 87);
+            this.button3.Location = new System.Drawing.Point(412, 87);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(75, 23);
             this.button3.TabIndex = 26;
@@ -128,41 +128,41 @@
             // txtmpkcopy
             // 
             this.txtmpkcopy.Enabled = false;
-            this.txtmpkcopy.Location = new System.Drawing.Point(93, 88);
+            this.txtmpkcopy.Location = new System.Drawing.Point(137, 88);
             this.txtmpkcopy.Name = "txtmpkcopy";
-            this.txtmpkcopy.Size = new System.Drawing.Size(242, 20);
+            this.txtmpkcopy.Size = new System.Drawing.Size(269, 20);
             this.txtmpkcopy.TabIndex = 25;
             // 
             // header
             // 
             this.header.AutoSize = true;
-            this.header.Location = new System.Drawing.Point(91, 113);
+            this.header.Location = new System.Drawing.Point(137, 113);
             this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
-            this.header.Size = new System.Drawing.Size(88, 17);
+            this.header.Size = new System.Drawing.Size(211, 17);
             this.header.TabIndex = 23;
-            this.header.Text = "Copy Header";
+            this.header.Text = "Copy Header (Order, IDs, Compression)";
             this.header.UseVisualStyleBackColor = true;
             this.header.CheckedChanged += new System.EventHandler(this.header_CheckedChanged);
             // 
             // compressbox
             // 
             this.compressbox.AutoSize = true;
-            this.compressbox.Location = new System.Drawing.Point(180, 113);
+            this.compressbox.Location = new System.Drawing.Point(363, 113);
             this.compressbox.Margin = new System.Windows.Forms.Padding(2);
             this.compressbox.Name = "compressbox";
-            this.compressbox.Size = new System.Drawing.Size(125, 17);
+            this.compressbox.Size = new System.Drawing.Size(96, 17);
             this.compressbox.TabIndex = 23;
-            this.compressbox.Text = "Files are compressed";
+            this.compressbox.Text = "Compress Files";
             this.compressbox.UseVisualStyleBackColor = true;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radioButton2);
             this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(91, 181);
+            this.groupBox1.Location = new System.Drawing.Point(137, 181);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(243, 53);
+            this.groupBox1.Size = new System.Drawing.Size(268, 53);
             this.groupBox1.TabIndex = 22;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sort By";
@@ -209,7 +209,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(46, 67);
+            this.label3.Location = new System.Drawing.Point(90, 67);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 13);
             this.label3.TabIndex = 19;
@@ -217,15 +217,15 @@
             // 
             // txtNameRe
             // 
-            this.txtNameRe.Location = new System.Drawing.Point(93, 62);
+            this.txtNameRe.Location = new System.Drawing.Point(137, 62);
             this.txtNameRe.Name = "txtNameRe";
-            this.txtNameRe.Size = new System.Drawing.Size(242, 20);
+            this.txtNameRe.Size = new System.Drawing.Size(269, 20);
             this.txtNameRe.TabIndex = 18;
-            this.txtNameRe.Text = "script.mpk";
+            this.txtNameRe.Text = "file.mpk";
             // 
             // btnRePack
             // 
-            this.btnRePack.Location = new System.Drawing.Point(157, 136);
+            this.btnRePack.Location = new System.Drawing.Point(191, 136);
             this.btnRePack.Name = "btnRePack";
             this.btnRePack.Size = new System.Drawing.Size(104, 39);
             this.btnRePack.TabIndex = 17;
@@ -235,7 +235,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(341, 34);
+            this.button2.Location = new System.Drawing.Point(412, 34);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 16;
@@ -246,7 +246,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(49, 39);
+            this.label2.Location = new System.Drawing.Point(93, 39);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(38, 13);
             this.label2.TabIndex = 15;
@@ -254,15 +254,15 @@
             // 
             // txtDirectorySaveRe
             // 
-            this.txtDirectorySaveRe.Location = new System.Drawing.Point(93, 36);
+            this.txtDirectorySaveRe.Location = new System.Drawing.Point(137, 36);
             this.txtDirectorySaveRe.Name = "txtDirectorySaveRe";
-            this.txtDirectorySaveRe.Size = new System.Drawing.Size(242, 20);
+            this.txtDirectorySaveRe.Size = new System.Drawing.Size(269, 20);
             this.txtDirectorySaveRe.TabIndex = 14;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 12);
+            this.label1.Location = new System.Drawing.Point(50, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 13;
@@ -270,7 +270,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(341, 8);
+            this.button1.Location = new System.Drawing.Point(412, 8);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 12;
@@ -280,9 +280,9 @@
             // 
             // txtDirectoryDataRe
             // 
-            this.txtDirectoryDataRe.Location = new System.Drawing.Point(93, 10);
+            this.txtDirectoryDataRe.Location = new System.Drawing.Point(137, 10);
             this.txtDirectoryDataRe.Name = "txtDirectoryDataRe";
-            this.txtDirectoryDataRe.Size = new System.Drawing.Size(242, 20);
+            this.txtDirectoryDataRe.Size = new System.Drawing.Size(269, 20);
             this.txtDirectoryDataRe.TabIndex = 11;
             // 
             // tabPage2
@@ -301,14 +301,14 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(424, 282);
+            this.tabPage2.Size = new System.Drawing.Size(497, 282);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "UnPack and List";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // BtnUnPack
             // 
-            this.BtnUnPack.Location = new System.Drawing.Point(144, 190);
+            this.BtnUnPack.Location = new System.Drawing.Point(177, 189);
             this.BtnUnPack.Name = "BtnUnPack";
             this.BtnUnPack.Size = new System.Drawing.Size(129, 47);
             this.BtnUnPack.TabIndex = 33;
@@ -321,9 +321,9 @@
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(43, 64);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(46, 13);
+            this.label5.Size = new System.Drawing.Size(43, 13);
             this.label5.TabIndex = 32;
-            this.label5.Text = "Statuts :";
+            this.label5.Text = "Status :";
             // 
             // lbTextUn
             // 
@@ -335,7 +335,7 @@
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(343, 34);
+            this.button4.Location = new System.Drawing.Point(416, 34);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(75, 23);
             this.button4.TabIndex = 27;
@@ -356,7 +356,7 @@
             // 
             this.txtDirectorySaveUn.Location = new System.Drawing.Point(95, 35);
             this.txtDirectorySaveUn.Name = "txtDirectorySaveUn";
-            this.txtDirectorySaveUn.Size = new System.Drawing.Size(242, 20);
+            this.txtDirectorySaveUn.Size = new System.Drawing.Size(315, 20);
             this.txtDirectorySaveUn.TabIndex = 25;
             // 
             // label9
@@ -370,7 +370,7 @@
             // 
             // button5
             // 
-            this.button5.Location = new System.Drawing.Point(343, 7);
+            this.button5.Location = new System.Drawing.Point(416, 7);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(75, 23);
             this.button5.TabIndex = 23;
@@ -382,12 +382,12 @@
             // 
             this.txtDirectoryDataUn.Location = new System.Drawing.Point(95, 9);
             this.txtDirectoryDataUn.Name = "txtDirectoryDataUn";
-            this.txtDirectoryDataUn.Size = new System.Drawing.Size(242, 20);
+            this.txtDirectoryDataUn.Size = new System.Drawing.Size(315, 20);
             this.txtDirectoryDataUn.TabIndex = 22;
             // 
             // listfiles
             // 
-            this.listfiles.Location = new System.Drawing.Point(172, 253);
+            this.listfiles.Location = new System.Drawing.Point(205, 252);
             this.listfiles.Name = "listfiles";
             this.listfiles.Size = new System.Drawing.Size(75, 23);
             this.listfiles.TabIndex = 34;
@@ -400,14 +400,14 @@
             this.listboxfiles.FormattingEnabled = true;
             this.listboxfiles.Location = new System.Drawing.Point(7, 88);
             this.listboxfiles.Name = "listboxfiles";
-            this.listboxfiles.Size = new System.Drawing.Size(411, 95);
+            this.listboxfiles.Size = new System.Drawing.Size(484, 95);
             this.listboxfiles.TabIndex = 35;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(472, 388);
+            this.ClientSize = new System.Drawing.Size(545, 388);
             this.Controls.Add(this.tabControl1);
             this.MaximizeBox = false;
             this.Name = "Form1";

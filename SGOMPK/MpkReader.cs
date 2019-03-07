@@ -2,6 +2,7 @@
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using zlib;
 
 namespace SGOMPK
 {
@@ -40,7 +41,7 @@ namespace SGOMPK
                         lb.Refresh();
                         lb.TopIndex = lb.Items.Count - 1;
                     });
-                    using (FileStream fileStream = File.Create(Path.Combine(save, entries[i].fileName)))
+                    using (FileStream fileStream = File.Create(Path.Combine(save, entries[i].fileName)))using( MemoryStream memOutput = new MemoryStream()) using(MemoryStream memOutput2 = new MemoryStream())
                     {
                         int blockSize = 2048;
                         while (input.Position != fileDataMaxRange)
@@ -54,7 +55,26 @@ namespace SGOMPK
                                 buffer = new byte[entries[i].size];
                             }
                             input.Read(buffer, 0, buffer.Length);
-                            fileStream.Write(buffer, 0, buffer.Length);
+                            if (entries[i].isCompressed) {
+                                memOutput.Write(buffer, 0, buffer.Length);
+                                memOutput.Flush();
+
+                            } else
+                            {
+                                fileStream.Write(buffer, 0, buffer.Length);
+                                fileStream.Flush();
+                            }
+                            
+                        }
+                        if (entries[i].isCompressed)
+                        {
+  
+                            ZOutputStream zipOut = new ZOutputStream(memOutput2);
+                            zipOut.Write(memOutput.ToArray(), 0, memOutput.ToArray().Length);
+                            zipOut.finish();
+                            memOutput2.Seek(0, SeekOrigin.Begin);
+                            byte[] result = memOutput2.ToArray();
+                            fileStream.Write(result, 0, result.Length);
                             fileStream.Flush();
                         }
                         fileStream.Close();

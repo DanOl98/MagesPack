@@ -181,6 +181,8 @@ namespace SGOMPK
 
         private void header_CheckedChanged(object sender, EventArgs e)
         {
+            compressbox.Checked = false;
+            compressbox.Enabled = !header.Checked;
             button3.Enabled = header.Checked;
             txtmpkcopy.Enabled = header.Checked;
         }

@@ -28,8 +28,8 @@ Name | Size |
 isCompressed | 4 bytes
 Index | 4 bytes
 Position | 8 bytes
-Size | 8 bytes
-Compressed Size (if not compressed it's the same as Size) | 8 bytes
+Size in File | 8 bytes
+Uncompressed Size (if not compressed it's the same as Size) | 8 bytes
 Null terminated file name | 224 bytes
 
 ## Raw data
