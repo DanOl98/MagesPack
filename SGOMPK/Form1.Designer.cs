@@ -30,6 +30,9 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
+            this.txtmpkcopy = new System.Windows.Forms.TextBox();
             this.header = new System.Windows.Forms.CheckBox();
             this.compressbox = new System.Windows.Forms.CheckBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -56,9 +59,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.button5 = new System.Windows.Forms.Button();
             this.txtDirectoryDataUn = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.txtmpkcopy = new System.Windows.Forms.TextBox();
+            this.listfiles = new System.Windows.Forms.Button();
+            this.listboxfiles = new System.Windows.Forms.ListBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -97,17 +99,45 @@
             this.tabPage1.Controls.Add(this.txtDirectoryDataRe);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(424, 282);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "RePack";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(31, 90);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(55, 13);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "MPK File :";
+            // 
+            // button3
+            // 
+            this.button3.Enabled = false;
+            this.button3.Location = new System.Drawing.Point(341, 87);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 26;
+            this.button3.Text = "Open";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // txtmpkcopy
+            // 
+            this.txtmpkcopy.Enabled = false;
+            this.txtmpkcopy.Location = new System.Drawing.Point(93, 88);
+            this.txtmpkcopy.Name = "txtmpkcopy";
+            this.txtmpkcopy.Size = new System.Drawing.Size(242, 20);
+            this.txtmpkcopy.TabIndex = 25;
+            // 
             // header
             // 
             this.header.AutoSize = true;
             this.header.Location = new System.Drawing.Point(91, 113);
-            this.header.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.header.Margin = new System.Windows.Forms.Padding(2);
             this.header.Name = "header";
             this.header.Size = new System.Drawing.Size(88, 17);
             this.header.TabIndex = 23;
@@ -119,7 +149,7 @@
             // 
             this.compressbox.AutoSize = true;
             this.compressbox.Location = new System.Drawing.Point(180, 113);
-            this.compressbox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.compressbox.Margin = new System.Windows.Forms.Padding(2);
             this.compressbox.Name = "compressbox";
             this.compressbox.Size = new System.Drawing.Size(125, 17);
             this.compressbox.TabIndex = 23;
@@ -257,6 +287,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.listboxfiles);
+            this.tabPage2.Controls.Add(this.listfiles);
             this.tabPage2.Controls.Add(this.BtnUnPack);
             this.tabPage2.Controls.Add(this.label5);
             this.tabPage2.Controls.Add(this.lbTextUn);
@@ -268,17 +300,17 @@
             this.tabPage2.Controls.Add(this.txtDirectoryDataUn);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
-            this.tabPage2.Size = new System.Drawing.Size(424, 214);
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(424, 282);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "UnPack";
+            this.tabPage2.Text = "UnPack and List";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // BtnUnPack
             // 
-            this.BtnUnPack.Location = new System.Drawing.Point(343, 61);
+            this.BtnUnPack.Location = new System.Drawing.Point(144, 190);
             this.BtnUnPack.Name = "BtnUnPack";
-            this.BtnUnPack.Size = new System.Drawing.Size(75, 23);
+            this.BtnUnPack.Size = new System.Drawing.Size(129, 47);
             this.BtnUnPack.TabIndex = 33;
             this.BtnUnPack.Text = "UnPack";
             this.BtnUnPack.UseVisualStyleBackColor = true;
@@ -353,33 +385,23 @@
             this.txtDirectoryDataUn.Size = new System.Drawing.Size(242, 20);
             this.txtDirectoryDataUn.TabIndex = 22;
             // 
-            // label6
+            // listfiles
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(31, 90);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 13);
-            this.label6.TabIndex = 27;
-            this.label6.Text = "MPK File :";
+            this.listfiles.Location = new System.Drawing.Point(172, 253);
+            this.listfiles.Name = "listfiles";
+            this.listfiles.Size = new System.Drawing.Size(75, 23);
+            this.listfiles.TabIndex = 34;
+            this.listfiles.Text = "List Files";
+            this.listfiles.UseVisualStyleBackColor = true;
+            this.listfiles.Click += new System.EventHandler(this.listfiles_Click);
             // 
-            // button3
+            // listboxfiles
             // 
-            this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(341, 87);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 26;
-            this.button3.Text = "Open";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // txtmpkcopy
-            // 
-            this.txtmpkcopy.Enabled = false;
-            this.txtmpkcopy.Location = new System.Drawing.Point(93, 88);
-            this.txtmpkcopy.Name = "txtmpkcopy";
-            this.txtmpkcopy.Size = new System.Drawing.Size(242, 20);
-            this.txtmpkcopy.TabIndex = 25;
+            this.listboxfiles.FormattingEnabled = true;
+            this.listboxfiles.Location = new System.Drawing.Point(7, 88);
+            this.listboxfiles.Name = "listboxfiles";
+            this.listboxfiles.Size = new System.Drawing.Size(411, 95);
+            this.listboxfiles.TabIndex = 35;
             // 
             // Form1
             // 
@@ -436,6 +458,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.TextBox txtmpkcopy;
+        private System.Windows.Forms.Button listfiles;
+        private System.Windows.Forms.ListBox listboxfiles;
     }
 }
 

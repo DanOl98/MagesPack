@@ -137,7 +137,7 @@ namespace SGOMPK
         {
             using (FileStream fileStream = File.Open(Path.Combine(txtDirectoryDataUn.Text), FileMode.Open, FileAccess.Read))
             {
-                MpkReader.ReaderArchive(fileStream, txtDirectorySaveUn.Text);
+                MpkReader.ReaderArchive(fileStream, txtDirectorySaveUn.Text, listboxfiles);
             }
         }
 
@@ -183,6 +183,16 @@ namespace SGOMPK
         {
             button3.Enabled = header.Checked;
             txtmpkcopy.Enabled = header.Checked;
+        }
+
+        private void listfiles_Click(object sender, EventArgs e)
+        {
+            using (FileStream fileStream = File.Open(Path.Combine(txtDirectoryDataUn.Text), FileMode.Open, FileAccess.Read))
+            {
+                ListFiles list = new ListFiles();
+                list.addStream(fileStream);
+                list.Show();
+            }
         }
     }
 }

@@ -113,27 +113,29 @@ namespace SGOMPK
         {
             using (BinaryReader binaryreader = new BinaryReader(input))
             {
-                int count = 0;
-                long endReadOffSet = input.Length;
-                while (count<entries.Count)
+                input.Position = 8;
+                long count = binaryreader.ReadInt64();
+                for (int i = 0; i < count; i++)
                 {
-                    long fileEntryPos = 68 + count * 256;
+                    long fileEntryPos = 64 + i * 256;
                     input.Position = fileEntryPos;
-                    long stt = binaryreader.ReadInt32();
-                    long fileDataPos = binaryreader.ReadInt64();
-                    long fileSize1 = binaryreader.ReadInt64();
-                    long fileSize2 = binaryreader.ReadInt64();
-                    long fileDataMaxRange = fileDataPos + fileSize1;
+                    bool isCompressed = binaryreader.ReadInt32() == 1;
+                    int Id = binaryreader.ReadInt32();
                     try
                     {
-                        entries[count].Id = (Int32)stt;
-                        count += 1;
+                        entries[i].Id = Id;
                     }
                     catch (Exception e)
                     {
                         Console.WriteLine(e);
                         throw;
                     }
+                    long fileDataPos = binaryreader.ReadInt64();
+                    long size = binaryreader.ReadInt64();
+                    long actualSize = binaryreader.ReadInt64();
+                    byte[] buffer = new byte[228];
+                    input.Read(buffer, 0, buffer.Length);
+                    string fileName = Encoding.UTF8.GetString(buffer).Replace("\0", "");
                 }
             }
         }
